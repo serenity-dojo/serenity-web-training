@@ -2,6 +2,7 @@ package serenityswag.authentication;
 
 import net.serenitybdd.core.steps.UIInteractionSteps;
 import net.thucydides.core.annotations.Step;
+import org.openqa.selenium.By;
 
 public class LoginActions extends UIInteractionSteps {
     @Step("Log in as {0}")
@@ -9,9 +10,9 @@ public class LoginActions extends UIInteractionSteps {
         openUrl("https://www.saucedemo.com/");
 
         // Login as a standard user
-        $("[data-test='username']").sendKeys(user.getUsername());
-        $("[data-test='password']").sendKeys(user.getPassword());
-        $("[data-test='login-button']").click();
+        $("#user-name").sendKeys(user.getUsername());
+        $("#password").sendKeys(user.getPassword());
+        $("#login-button").click();
     }
 
 }
