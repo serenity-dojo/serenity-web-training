@@ -14,5 +14,4 @@ public class LoginActions extends UIInteractionSteps {
         find(By.name("password")).sendKeys(user.getPassword());
         find(By.name("login-button")).click();
     }
-
 }
