@@ -15,13 +15,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SerenityRunner.class)
 public class WhenViewingHighlightedProducts {
-    @Managed
+
+    @Managed(driver = "chrome")
     WebDriver driver;
 
     @Steps
     LoginActions login;
 
     ProductListPageObject productList;
+
+    ProductDetailsPageObject productDetails;
 
     @Test
     public void shouldDisplayHighlightedProductsOnTheWelcomePage() {
@@ -31,5 +34,16 @@ public class WhenViewingHighlightedProducts {
 
         assertThat(productsOnDisplay).hasSize(6)
                                      .contains("Sauce Labs Backpack");
+    }
+
+    @Test
+    public void shouldDisplayCorrectProductDetailsPage() {
+        login.as(User.STANDARD_USER);
+
+        String firstItemName = productList.titles().get(0);
+
+        productList.openProductDetailsFor(firstItemName);
+
+        assertThat(productDetails.productName()).isEqualTo(firstItemName);
     }
 }
