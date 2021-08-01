@@ -1,5 +1,6 @@
 package serenityswag.inventory;
 
+import net.serenitybdd.core.Serenity;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -23,9 +24,12 @@ public class WhenViewingHighlightedProducts {
     @Steps
     LoginActions login;
 
-    ProductListPageObject productList;
+    @Steps
+    ViewProductDetailsActions viewProductDetails;
 
-    ProductDetailsPageObject productDetails;
+    ProductList productList;
+
+    ProductDetails productDetails;
 
     @Test
     public void shouldDisplayHighlightedProductsOnTheWelcomePage() {
@@ -55,9 +59,13 @@ public class WhenViewingHighlightedProducts {
 
         String firstItemName = productList.titles().get(0);
 
-        productList.openProductDetailsFor(firstItemName);
+        viewProductDetails.forProductWithName(firstItemName);
 
-        assertThat(productDetails.productName()).isEqualTo(firstItemName);
-        productDetails.productImageWithAltValueOf(firstItemName).shouldBeVisible();
+        Serenity.reportThat("The product name should be correctly displayed",
+                () -> assertThat(productDetails.productName()).isEqualTo(firstItemName)
+                );
+        Serenity.reportThat("The product image should have the correct alt text",
+                () -> productDetails.productImageWithAltValueOf(firstItemName).shouldBeVisible()
+        );
     }
 }
