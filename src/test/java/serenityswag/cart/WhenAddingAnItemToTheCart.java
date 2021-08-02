@@ -75,6 +75,19 @@ public class WhenAddingAnItemToTheCart {
         );
     }
 
+    CartPageObject cartPage;
+    @Test
+    public void pricesForEachItemShouldBeShownInTheCart() {
+
+        // Add items to the shopping cart from the home page
+        cart.addItems(firstThreeProductTitlesDisplayed());
+
+        // Open the cart page
+        cartPage.open();
+
+        cartPage.items()
+    }
+
     private List<String> firstThreeProductTitlesDisplayed() {
         return productList.titles().subList(0, 3);
     }
