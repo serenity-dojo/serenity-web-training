@@ -76,16 +76,21 @@ public class WhenAddingAnItemToTheCart {
     }
 
     CartPageObject cartPage;
+
     @Test
     public void pricesForEachItemShouldBeShownInTheCart() {
 
-        // Add items to the shopping cart from the home page
+        // add items to the shopping cart
         cart.addItems(firstThreeProductTitlesDisplayed());
 
         // Open the cart page
         cartPage.open();
 
-        cartPage.items()
+        // Check that each item in the cart has a price
+        List<CartItem> items = cartPage.items();
+
+        assertThat(items).hasSize(3)
+                .allMatch(item -> item.price() > 0.0);
     }
 
     private List<String> firstThreeProductTitlesDisplayed() {
