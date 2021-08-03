@@ -87,9 +87,7 @@ public class WhenAddingAnItemToTheCart {
         cartPage.open();
 
         // Check that each item in the cart has a price
-        List<CartItem> items = cartPage.items();
-
-        assertThat(items).hasSize(3)
+        assertThat(cartPage.items()).hasSize(3)
                 .allMatch(item -> item.price() > 0.0);
     }
 
