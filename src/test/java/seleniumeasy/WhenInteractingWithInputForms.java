@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import seleniumeasy.pageobjects.SingleInputFieldForm;
+import seleniumeasy.pageobjects.TwoInputFieldForm;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -16,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SerenityRunner.class)
 public class WhenInteractingWithInputForms {
 
-    @Managed(driver = "chrome")
+    @Managed(driver = "firefox")
     WebDriver driver;
 
     SingleInputFieldForm singleInputFieldForm;
@@ -36,6 +37,22 @@ public class WhenInteractingWithInputForms {
         singleInputFieldForm.showMessage();
 
         assertThat(singleInputFieldForm.displayedMessage()).isEqualTo("Hi there");
+    }
+
+    TwoInputFieldForm twoInputFieldForm;
+
+    @Test
+    public void basicFormsWithMultipleFields() {
+
+        twoInputFieldForm.open();
+
+        twoInputFieldForm.enterA("2");
+        twoInputFieldForm.enterB("3");
+
+        twoInputFieldForm.getTotal();
+
+        assertThat(twoInputFieldForm.displayedTotal()).isEqualTo("5");
+
     }
 
     /**
