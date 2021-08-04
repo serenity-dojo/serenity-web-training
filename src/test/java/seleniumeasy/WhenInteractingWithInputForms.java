@@ -1,12 +1,25 @@
 package seleniumeasy;
 
+import net.serenitybdd.junit.runners.SerenityRunner;
+import net.thucydides.core.annotations.Managed;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
+import seleniumeasy.pageobjects.SingleInputFieldForm;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * This is a series of exercises designed to explore how to use
  * Serenity BDD to test various kinds of HTML elements
  */
+@RunWith(SerenityRunner.class)
 public class WhenInteractingWithInputForms {
+
+    @Managed(driver = "chrome")
+    WebDriver driver;
+
+    SingleInputFieldForm singleInputFieldForm;
 
     /**
      * Basic form fields:
@@ -15,6 +28,14 @@ public class WhenInteractingWithInputForms {
      */
     @Test
     public void basicForms() {
+
+        singleInputFieldForm.open();
+
+        singleInputFieldForm.enterMessage("Hi there");
+
+        singleInputFieldForm.showMessage();
+
+        assertThat(singleInputFieldForm.displayedMessage()).isEqualTo("Hi there");
     }
 
     /**
