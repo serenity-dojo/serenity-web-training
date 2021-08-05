@@ -6,6 +6,10 @@ import org.openqa.selenium.By;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
+/**
+ * Use this class as a base class for your page component objects so that the popup window is closed correctly
+ * if it appears.
+ */
 public abstract class SeleniumEasyForm extends PageObject {
 
     private static final By POPUP_WINDOW_CLOSE_ICON = By.cssSelector("a[title='Close']");
