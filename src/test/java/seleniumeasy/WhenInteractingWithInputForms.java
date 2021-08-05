@@ -5,9 +5,12 @@ import net.thucydides.core.annotations.Managed;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import seleniumeasy.pageobjects.SingleInputFieldForm;
-import seleniumeasy.pageobjects.TwoInputFieldForm;
+import seleniumeasy.pageobjects.*;
 
+import java.util.Arrays;
+import java.util.List;
+
+import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -17,16 +20,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SerenityRunner.class)
 public class WhenInteractingWithInputForms {
 
-    @Managed(driver = "firefox")
+    @Managed(driver = "chrome", uniqueSession = true)
     WebDriver driver;
-
-    SingleInputFieldForm singleInputFieldForm;
 
     /**
      * Basic form fields:
      * Enter a message and check that the message is correctly displayed
      * https://www.seleniumeasy.com/test/basic-first-form-demo.html
      */
+    SingleInputFieldForm singleInputFieldForm;
+
     @Test
     public void basicForms() {
 
@@ -39,6 +42,11 @@ public class WhenInteractingWithInputForms {
         assertThat(singleInputFieldForm.displayedMessage()).isEqualTo("Hi there");
     }
 
+    /**
+     * Basic form fields (part 2)
+     * Enter two values and calculate the result
+     * https://www.seleniumeasy.com/test/basic-first-form-demo.html
+     */
     TwoInputFieldForm twoInputFieldForm;
 
     @Test
@@ -60,8 +68,33 @@ public class WhenInteractingWithInputForms {
      * Check that a message appears when you click the checkbox
      * https://www.seleniumeasy.com/test/basic-checkbox-demo.html
      */
+
+    CheckboxForm checkboxForm;
+
     @Test
-    public void checkboxes() {
+    public void singleCheckbox() {
+        checkboxForm.open();
+
+        checkboxForm.setAgeSelected();
+
+        assertThat(checkboxForm.ageText()).isEqualTo("Success - Check box is checked");
+    }
+
+    private static final List<String> ALL_OPTIONS = asList("Option 1","Option 2", "Option 3", "Option 4");
+
+    @Test
+    public void multipleCheckboxes() {
+        checkboxForm.open();
+
+        assertThat(ALL_OPTIONS).allMatch(
+                option -> !checkboxForm.optionIsCheckedFor(option)
+        );
+
+        checkboxForm.checkAll();
+
+        assertThat(ALL_OPTIONS).allMatch(
+                option -> checkboxForm.optionIsCheckedFor(option)
+        );
     }
 
     /**
@@ -69,16 +102,50 @@ public class WhenInteractingWithInputForms {
      * Check that a message appears when you click the radio button
      * https://www.seleniumeasy.com/test/basic-radiobutton-demo.html
      */
+    RadioButtonsForm radioButtonsForm;
+
     @Test
     public void radioButtons() {
+        radioButtonsForm.open();
+
+        radioButtonsForm.selectOption("Male");
+
+        radioButtonsForm.getCheckedValue();
+
+        assertThat(radioButtonsForm.getResult()).isEqualTo("Radio button 'Male' is checked");
+    }
+
+    MultipleRadioButtonsForm multipleRadioButtonsForm;
+
+    @Test
+    public void multipleRadioButtons() {
+        multipleRadioButtonsForm.open();
+
+        multipleRadioButtonsForm.selectGender("Female");
+        multipleRadioButtonsForm.selectAgeGroup("15 - 50");
+
+        multipleRadioButtonsForm.getValues();
+
+        assertThat(multipleRadioButtonsForm.getResult())
+                .contains("Sex : Female")
+                .contains("Age group: 15 - 50");
     }
 
     /**
      * Dropdown lists
      * https://www.seleniumeasy.com/test/basic-select-dropdown-demo.html
      */
+    SelectListForm selectListForm;
+
     @Test
     public void selectList() {
+        selectListForm.open();
+
+        assertThat(selectListForm.selectedDay()).isEmpty();
+
+        selectListForm.selectDay("Tuesday");
+
+        assertThat(selectListForm.selectedDay()).isEqualTo("Tuesday");
 
     }
 
@@ -88,16 +155,12 @@ public class WhenInteractingWithInputForms {
      */
     @Test
     public void multiSelectList() {
+        selectListForm.open();
 
+        assertThat(selectListForm.selectedStates()).isEmpty();
+
+        selectListForm.selectStates("Florida","Ohio","Texas");
+
+        assertThat(selectListForm.selectedStates()).containsExactly("Florida","Ohio","Texas");
     }
-
-    /**
-     * JQuery Select  list
-     * https://www.seleniumeasy.com/test/jquery-dropdown-search-demo.html
-     */
-    @Test
-    public void jquerySelectList() {
-
-    }
-
 }
