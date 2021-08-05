@@ -40,8 +40,6 @@ public class WhenInteractingWithInputForms {
     public void singleCheckbox() {
     }
 
-    private static final List<String> ALL_OPTIONS = asList("Option 1","Option 2", "Option 3", "Option 4");
-
     @Test
     public void multipleCheckboxes() {
     }
