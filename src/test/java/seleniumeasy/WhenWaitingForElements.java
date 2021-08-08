@@ -23,9 +23,4 @@ public class WhenWaitingForElements {
     @Test
     public void waitingForElementsToAppear() {
     }
-
-    @Test
-    public void waitingForElementsToDisappear() {
-    }
-
 }
