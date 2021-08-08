@@ -9,8 +9,8 @@
     <name>Sample Serenity BDD project using JUnit</name>
 
     <properties>
-        <serenity.version>2.5.1</serenity.version>
-        <serenity.maven.version>2.5.1</serenity.maven.version>
+        <serenity.version>2.5.4</serenity.version>
+        <serenity.maven.version>2.5.4</serenity.maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <encoding>UTF-8</encoding>
         <tags></tags>

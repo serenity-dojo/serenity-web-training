@@ -13,6 +13,10 @@ public class WhenWaitingForElements {
     WebDriver driver;
 
     @Test
+    public void waitingForAModalDialog() {
+    }
+
+    @Test
     public void waitingForAMessageToClose() {
     }
 
