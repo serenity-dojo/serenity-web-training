@@ -1,4 +1,4 @@
-package serenityswag.authentication;
+package webtests.serenityswag.authentication;
 
 import net.serenitybdd.core.steps.UIInteractionSteps;
 import net.thucydides.core.annotations.Step;

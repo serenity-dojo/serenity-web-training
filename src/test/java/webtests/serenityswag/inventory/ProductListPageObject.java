@@ -1,4 +1,4 @@
-package serenityswag.inventory;
+package webtests.serenityswag.inventory;
 
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;

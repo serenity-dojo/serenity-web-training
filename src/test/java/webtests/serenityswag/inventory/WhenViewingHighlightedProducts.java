@@ -1,20 +1,22 @@
-package serenityswag.inventory;
+package webtests.serenityswag.inventory;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.core.annotations.WithTag;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import serenityswag.authentication.LoginActions;
-import serenityswag.authentication.User;
+import webtests.serenityswag.authentication.LoginActions;
+import webtests.serenityswag.authentication.User;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SerenityRunner.class)
+@WithTag("remote-enabled")
 public class WhenViewingHighlightedProducts {
 
     @Managed(driver = "chrome")

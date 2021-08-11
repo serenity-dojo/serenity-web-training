@@ -1,11 +1,12 @@
-package seleniumeasy;
+package webtests.seleniumeasy;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.WithTag;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import seleniumeasy.pageobjects.*;
+import webtests.seleniumeasy.pageobjects.*;
 
 import java.util.List;
 
@@ -17,9 +18,10 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Serenity BDD to test various kinds of HTML elements
  */
 @RunWith(SerenityRunner.class)
+@WithTag("remote-enabled")
 public class WhenInteractingWithInputForms {
 
-    @Managed(driver = "chrome", uniqueSession = true)
+    @Managed(uniqueSession = true)
     WebDriver driver;
 
     /**

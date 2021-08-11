@@ -1,4 +1,4 @@
-package seleniumeasy.pageobjects;
+package webtests.seleniumeasy.pageobjects;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.WhenPageOpens;

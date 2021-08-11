@@ -1,4 +1,4 @@
-package seleniumeasy;
+package webtests.seleniumeasy;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -7,7 +7,7 @@ import org.awaitility.Awaitility;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import seleniumeasy.pageobjects.DownloadPage;
+import webtests.seleniumeasy.pageobjects.DownloadPage;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -34,7 +34,7 @@ public class WhenDownloadingFiles {
         File downloadedFile = SessionLocalTempDirectory.forTheCurrentSession().resolve("sample.png").toFile();
 
         // Wait for the file to download
-        Awaitility.await().atMost(10, TimeUnit.SECONDS).until(downloadedFile::exists);
+        Awaitility.await().atMost(5, TimeUnit.SECONDS).until(downloadedFile::exists);
 
         // Check that the file exists
         assertThat(downloadedFile).exists();

@@ -1,4 +1,4 @@
-package seleniumeasy.pageobjects;
+package webtests.seleniumeasy.pageobjects;
 
 import org.openqa.selenium.By;
 

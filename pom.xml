@@ -9,8 +9,8 @@
     <name>Sample Serenity BDD project using JUnit</name>
 
     <properties>
-        <serenity.version>2.5.4</serenity.version>
-        <serenity.maven.version>2.5.4</serenity.maven.version>
+        <serenity.version>2.5.8-SNAPSHOT</serenity.version>
+        <serenity.maven.version>2.5.8-SNAPSHOT</serenity.maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <encoding>UTF-8</encoding>
         <tags></tags>
@@ -33,6 +33,18 @@
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-screenplay</artifactId>
+            <version>${serenity.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-saucelabs</artifactId>
+            <version>${serenity.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-browserstack</artifactId>
             <version>${serenity.version}</version>
             <scope>test</scope>
         </dependency>
@@ -88,9 +100,10 @@
                     <systemPropertyVariables>
                         <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
                     </systemPropertyVariables>
-                    <parallel>classes</parallel>
+                    <parallel>classesAndMethods</parallel>
                     <threadCount>${parallel.tests}</threadCount>
                     <forkCount>${parallel.tests}</forkCount>
+                    <perCoreThreadCount>false</perCoreThreadCount>
                 </configuration>
                 <executions>
                     <execution>
