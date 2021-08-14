@@ -18,10 +18,9 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Serenity BDD to test various kinds of HTML elements
  */
 @RunWith(SerenityRunner.class)
-@WithTag("remote-enabled")
 public class WhenInteractingWithInputForms {
 
-    @Managed(uniqueSession = true)
+    @Managed
     WebDriver driver;
 
     /**

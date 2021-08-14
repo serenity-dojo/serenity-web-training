@@ -3,7 +3,6 @@ package webtests.serenityswag.inventory;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
-import net.thucydides.core.annotations.WithTag;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,10 +15,9 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SerenityRunner.class)
-@WithTag("remote-enabled")
 public class WhenViewingHighlightedProducts {
 
-    @Managed(driver = "chrome")
+    @Managed
     WebDriver driver;
 
     @Steps
@@ -36,7 +34,7 @@ public class WhenViewingHighlightedProducts {
         List<String> productsOnDisplay = productList.titles();
 
         assertThat(productsOnDisplay).hasSize(6)
-                                     .contains("Sauce Labs Backpack");
+                .contains("Sauce Labs Backpack");
     }
 
     @Test
@@ -53,6 +51,7 @@ public class WhenViewingHighlightedProducts {
 
     @Test
     public void shouldDisplayCorrectProductDetailsPage() {
+
         login.as(User.STANDARD_USER);
 
         String firstItemName = productList.titles().get(0);
