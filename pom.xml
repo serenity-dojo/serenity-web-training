@@ -100,8 +100,6 @@
                     <systemPropertyVariables>
                         <webdriver.base.url>${webdriver.base.url}</webdriver.base.url>
                     </systemPropertyVariables>
-                    <parallel>classes</parallel>
-                    <threadCount>2</threadCount>
                 </configuration>
                 <executions>
                     <execution>
