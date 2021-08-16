@@ -79,7 +79,7 @@ public class WhenInteractingWithInputForms {
         assertThat(checkboxForm.ageText()).isEqualTo("Success - Check box is checked");
     }
 
-    private static final List<String> ALL_THE_OPTIONS = asList("Option 1", "Option 2","Option 3","Option 4");
+    private static final List<String> ALL_THE_OPTIONS = asList("Option 1", "Option 2", "Option 3", "Option 4");
 
     @Test
     public void multipleCheckboxes() {
@@ -160,8 +160,23 @@ public class WhenInteractingWithInputForms {
 
         assertThat(multiSelectListForm.selectedStates()).isEmpty();
 
-        multiSelectListForm.selectStates("Florida","Ohio","Texas");
+        multiSelectListForm.selectStates("Florida", "Ohio", "Texas");
 
-        assertThat(multiSelectListForm.selectedStates()).containsExactly("Florida","Ohio","Texas");
+        assertThat(multiSelectListForm.selectedStates()).containsExactly("Florida", "Ohio", "Texas");
+    }
+
+    HoverPage hoverPage;
+
+    @Test
+    public void hover() {
+        hoverPage.open();
+
+        hoverPage.hoverOverFigure(1);
+        hoverPage.figureCaption(1).shouldBeVisible();
+        hoverPage.figureCaption(1).shouldContainText("user1");
+
+        hoverPage.hoverOverFigure(2);
+        hoverPage.figureCaption(2).shouldBeVisible();
+        hoverPage.figureCaption(2).shouldContainText("user2");
     }
 }
