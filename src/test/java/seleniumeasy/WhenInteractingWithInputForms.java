@@ -172,11 +172,16 @@ public class WhenInteractingWithInputForms {
         hoverPage.open();
 
         hoverPage.hoverOverFigure(1);
-        hoverPage.figureCaption(1).shouldBeVisible();
-        hoverPage.figureCaption(1).shouldContainText("user1");
+        hoverPage.captionForFigure(1).shouldBeVisible();
+        hoverPage.captionForFigure(1).shouldContainText("user1");
 
         hoverPage.hoverOverFigure(2);
-        hoverPage.figureCaption(2).shouldBeVisible();
-        hoverPage.figureCaption(2).shouldContainText("user2");
+        hoverPage.captionForFigure(2).shouldBeVisible();
+        hoverPage.captionForFigure(2).shouldContainText("user2");
+
+
+
+
     }
+
 }
