@@ -28,9 +28,11 @@ public class WhenLoggingOn {
 
         login.as(STANDARD_USER);
 
-        // Should see product catalog
+        Serenity.recordReportData().withTitle("User credentials")
+                                   .andContents("User: " + STANDARD_USER);
+
         Serenity.reportThat("The inventory page should be displayed with the correct title",
                 () -> assertThat(inventoryPage.getHeading()).isEqualToIgnoringCase("Products")
-        );
+                );
     }
 }
