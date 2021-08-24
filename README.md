@@ -23,9 +23,16 @@ Open the `WhenAddingTasks` and implement the `addingASingleTask()` method. Use a
 
 ## Exercise 2
 
-
 Open the `WhenAddingTasks` and implement the `addingMultipleTasks()` method. You can reuse methods developed in the previous exercise.
 
 ## Exercise 3
 
 Open the `WhenCompletingATask` class and implement the `activeTasksShouldNotShowCompletedTasks()` method.
+
+## Exercise 4
+
+Open the `WhenCompletingATask` class and implement the `completedTasksShouldNotShowActiveTasks()` method.
+
+## Exercise 5 ()
+
+Open the `WhenDeletingATask` class and implement the `deletedItemsShouldDissapearFromTheList()` method.
