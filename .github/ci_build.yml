@@ -1,4 +1,4 @@
-name: Smoke Tests (Chrome)
+name: CI Build
 
 on: [push]
 
@@ -21,9 +21,5 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Snapshot Build
-
-        run: mvn clean install -T4 -DskipTests
-
-      - name: Smoke Tests
-        run: cd serenity-smoketests && mvn verify -Denvironment=run_with_chrome
+      - name: Web Tests
+        run: mvn clean verify
