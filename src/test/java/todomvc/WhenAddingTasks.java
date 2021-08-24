@@ -32,6 +32,10 @@ public class WhenAddingTasks {
         Serenity.reportThat("The todo list should contain 'Feed The Cat",
                 () -> assertThat(todoList.items()).containsExactly("Feed The Cat")
         );
+        Serenity.reportThat("The todo list count should be 1",
+                () -> assertThat(todoList.itemLeftCount()).isEqualTo(1)
+        );
+
     }
 
     @Test
@@ -40,6 +44,9 @@ public class WhenAddingTasks {
 
         Serenity.reportThat("The todo list should contain all the entries in the expected order",
                 () -> assertThat(todoList.items()).containsExactly("Feed The Cat","Walk the dog")
+        );
+        Serenity.reportThat("The todo list count should be 2",
+                () -> assertThat(todoList.itemLeftCount()).isEqualTo(2)
         );
     }
 

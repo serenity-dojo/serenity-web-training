@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import static net.serenitybdd.core.Serenity.reportThat;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SerenityRunner.class)
@@ -33,7 +34,10 @@ public class WhenCompletingATask {
 
         todoList.filterBy("Active");
 
-        Serenity.reportThat("The todo list should contain only uncompleted items",
+        reportThat("The todo list should contain only uncompleted items",
+                () -> assertThat(todoList.items()).containsExactly("Walk the dog")
+        );
+        reportThat("The correct number of remaining todo items should be displayed",
                 () -> assertThat(todoList.items()).containsExactly("Walk the dog")
         );
     }
@@ -46,7 +50,7 @@ public class WhenCompletingATask {
 
         todoList.filterBy("Completed");
 
-        Serenity.reportThat("The todo list should contain only uncompleted items",
+        reportThat("The todo list should contain only uncompleted items",
                 () -> assertThat(todoList.items()).containsExactly("Feed The Cat")
         );
     }

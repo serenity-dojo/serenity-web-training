@@ -12,6 +12,7 @@ public class TodoListActions extends UIInteractionSteps {
     public static final String ITEM_LABELS = ".todo-list li label";
     public static final String FILTER_BUTTON = "//ul[@class='filters']//a[.='{0}']";
     public static final String ITEM_LABEL = "//label[.='{0}']";
+    public static final String ITEM_LEFT_COUNT = ".todo-count strong";
     public static final String DELETE_ICON = "//label[.='{0}']/following-sibling::button";
 
     @Step
@@ -34,6 +35,11 @@ public class TodoListActions extends UIInteractionSteps {
     public List<String> items() {
         return $$(ITEM_LABELS).texts();
     }
+
+    public Integer itemLeftCount() {
+        return Integer.parseInt($(ITEM_LEFT_COUNT).getText());
+    }
+
 
     @Step("Complete item {0}")
     public void completeItem(String item) {
