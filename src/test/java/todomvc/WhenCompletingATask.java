@@ -1,41 +1,24 @@
 package todomvc;
 
-import net.serenitybdd.core.Serenity;
-import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Steps;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-@RunWith(SerenityRunner.class)
 public class WhenCompletingATask {
 
-    @Managed(driver = "chrome")
-    WebDriver driver;
-
-    @Steps
-    TodoListActions todoList;
-
-    @Before
-    public void openApp() {
-        todoList.openApplication();
-    }
-
+    // TODO: Exercise 3
     @Test
     public void activeTasksShouldNotShowCompletedTasks() {
-        todoList.addItems("Feed The Cat","Walk the dog");
-
-        todoList.completeItem("Feed The Cat");
-
-        todoList.filterBy("Active");
-
-        Serenity.reportThat("The todo list should contain only uncompleted items",
-                () -> assertThat(todoList.items()).containsExactly("Walk the dog")
-        );
+        // Add "Feed the cat" and "Walk the dog" to the list
+        // Complete "Feed the cat"
+        // Filter by "Active"
+        // Check that only "Walk the dog" appears
     }
 
+    // TODO: Exercise 4
+    @Test
+    public void completedTasksShouldNotShowActiveTasks() {
+        // Add "Feed the cat" and "Walk the dog" to the list
+        // Complete "Feed the cat"
+        // Filter by "Completed"
+        // Check that only "Feed the cat" appears
+    }
 }

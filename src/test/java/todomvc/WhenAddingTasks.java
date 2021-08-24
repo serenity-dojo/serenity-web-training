@@ -1,46 +1,21 @@
 package todomvc;
 
-import net.serenitybdd.core.Serenity;
-import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Steps;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-@RunWith(SerenityRunner.class)
 public class WhenAddingTasks {
 
-    @Managed(driver = "chrome")
-    WebDriver driver;
-
-    @Steps
-    TodoListActions todoList;
-
-    @Before
-    public void openApp() {
-        todoList.openApplication();
-    }
-
+    // TODO: Exercise 1
     @Test
     public void addingASingleTask() {
-        todoList.addItem("Feed The Cat");
-
-        Serenity.reportThat("The todo list should contain 'Feed The Cat",
-                () -> assertThat(todoList.items()).containsExactly("Feed The Cat")
-        );
+        // Add "Feed The Cat" to the list
+        // Check that "Feed The Cat" appears in the list
     }
 
+    // TODO: Exercise 2
     @Test
     public void addingMultipleTasks() {
-        todoList.addItems("Feed The Cat","Walk the dog");
-
-        Serenity.reportThat("The todo list should contain all the entries in the expected order",
-                () -> assertThat(todoList.items()).containsExactly("Feed The Cat","Walk the dog")
-        );
+        // Add "Feed The Cat" and "Walk the dog" to the list
+        // Check that they all appear in the list
     }
 
 }

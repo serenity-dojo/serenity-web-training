@@ -1,35 +1,31 @@
-# Serenity JUnit Starter project
+# TodoMVC Exercise
 
+Sample exercise for the [Effective UI Test Automation With Serenity BDD And Selenium](https://www.udemy.com/course/serenity-bdd-web-testing/?referralCode=3E5878CF6F4676EF507B) course on Udemy.
 
-This is the simplest possible build script setup for Serenity BDD using Java. 
+In this exercise, you will complete a series of simple tests against the [TodoMVC](https://todomvc.com/examples/angularjs/#/) application using core Serenity BDD features.
 
-This is a very minimal sample project using JUnit and Serenity BDD in Java. 
-You can use this project as a quick starting point for your own projects.
+You can see a [sample solution here](https://github.com/serenity-dojo/serenity-web-training/tree/todomvc-solution).
 
 ## Get the code
 
 Git:
 
-    git clone https://github.com/serenity-bdd/serenity-junit-starter.git
+    git clone https://github.com/serenity-dojo/serenity-web-training/tree/todomvc-start
     cd serenity-junit-starter
+    git checkout todomvc-start
+    git checkout -b my-todomvc-exercise
+
+You will find the tests to implement in the `WhenAddingTasks` and `WhenCompletingATask` classes.
+
+## Exercise 1
+
+Open the `WhenAddingTasks` and implement the `addingASingleTask()` method. Use a Serenity action class to implement the steps. Make sure the steps and assertions appear in the reports.
+
+## Exercise 2
 
 
-Or simply [download a zip](https://github.com/serenity-bdd/serenity-junit-starter/archive/master.zip) file.
+Open the `WhenAddingTasks` and implement the `addingMultipleTasks()` method. You can reuse methods developed in the previous exercise.
 
-## Use Maven
+## Exercise 3
 
-Open a command window and run:
-
-    mvn clean verify
-
-## Use Gradle
-
-Open a command window and run:
-
-    gradlew test 
-
-
-## Viewing the reports
-
-Both of the commands provided above will produce a Serenity test report in the `target/site/serenity` directory. Go take a look!
-
+Open the `WhenCompletingATask` class and implement the `activeTasksShouldNotShowCompletedTasks()` method.
