@@ -51,6 +51,12 @@ Open the `WhenCompletingATask` class and implement the `activeTasksShouldNotShow
 
 Open the `WhenCompletingATask` class and implement the `completedTasksShouldNotShowActiveTasks()` method.
 
-## Exercise 5 ()
+## Exercise 5
 
 Open the `WhenDeletingATask` class and implement the `deletedItemsShouldDissapearFromTheList()` method.
+
+## Exercise 6
+Write a data-driven test to test the following scenarios:
+  * When you add the items "Feed the cat" and "Walk the dog", and complete "Feed the cat", and then filter by "Completed", you should only see "Feed the cat"
+  * When you add the items "Feed the cat" and "Walk the dog", and complete "Feed the cat", and then filter by "Active", you should only see "Walk the dog"
+  * When you add the items "Feed the cat" and "Walk the dog", and complete "Feed the cat", and then filter by "All", you should all the items
