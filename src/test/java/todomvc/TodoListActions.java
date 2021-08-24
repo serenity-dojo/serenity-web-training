@@ -1,10 +1,11 @@
 package todomvc;
 
 import net.serenitybdd.core.steps.UIInteractionSteps;
-import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.Step;
 
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TodoListActions extends UIInteractionSteps {
 
@@ -15,6 +16,8 @@ public class TodoListActions extends UIInteractionSteps {
     public static final String ITEM_LEFT_COUNT = ".todo-count strong";
     public static final String DELETE_ICON = "//label[.='{0}']/following-sibling::button";
 
+    static final Logger LOGGER = LoggerFactory.getLogger(TodoListActions.class);
+
     @Step
     public void openApplication() {
         openUrl("https://todomvc.com/examples/angularjs/#/");
@@ -22,11 +25,13 @@ public class TodoListActions extends UIInteractionSteps {
 
     @Step("Add item {0}")
     public void addItem(String item) {
+        LOGGER.info("Adding item '{}'", item);
         $(".new-todo").typeAndEnter(item);
     }
 
     @Step("Add items {0}")
     public void addItems(String... items) {
+
         for (String item : items) {
             addItem(item);
         }

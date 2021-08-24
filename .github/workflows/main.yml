@@ -24,4 +24,4 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Web Tests
-        run: mvn clean verify
+        run: mvn clean verify -Dserenity.console.color=false -Dserenity.logging=quiet

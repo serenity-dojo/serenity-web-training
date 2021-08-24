@@ -1,18 +1,26 @@
 <configuration>
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>
-                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
-            </pattern>
-        </encoder>
+    <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
     </appender>
 
-    <logger name="root" level="DEBUG"/>
-    <logger name="net.serenitybdd" level="INFO"/>
-    <logger name="net.thucydides" level="INFO"/>
+    <logger name="todomvc" level="debug" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
 
-    <root level="DEBUG">
-        <appender-ref ref="STDOUT"/>
+    <root level="error">
+        <appender-ref ref="CONSOLE"/>
     </root>
+<!--    <logger name="root" level="INFO"/>-->
+<!--&lt;!&ndash;    <logger name="net.serenitybdd" level="WARNING"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    <logger name="net.thucydides" level="WARNING"/>&ndash;&gt;-->
+
+<!--    <root level="WARNING">-->
+<!--        <appender-ref ref="STDOUT"/>-->
+<!--    </root>-->
 
 </configuration>
