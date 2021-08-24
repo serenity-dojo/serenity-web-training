@@ -25,3 +25,9 @@ jobs:
 
       - name: Web Tests
         run: mvn clean verify -Dserenity.console.color=false -Dserenity.logging=quiet
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: target/site/serenity # The folder the action should deploy.
