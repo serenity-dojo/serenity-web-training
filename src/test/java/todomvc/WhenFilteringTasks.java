@@ -41,7 +41,7 @@ public class WhenFilteringTasks {
         this.filteredItems = filteredItems;
     }
 
-    @TestData
+    @TestData(columnNames = "Filter By, Todo Items, Completed Item, Filtered Items")
     public static Collection<Object[]> testData() {
         return asList(new Object[][]{
                 {"Active", asList("Feed the cat", "Walk the dog"), "Feed the cat",  singletonList("Walk the dog")},
