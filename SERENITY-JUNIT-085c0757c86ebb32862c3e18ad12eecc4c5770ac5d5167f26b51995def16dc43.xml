@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="todomvc.WhenDeletingATask" skipped="0" tests="1" time="15.32" timestamp="2021-08-24 07:01:19"><testcase classname="todomvc.WhenDeletingATask" name="Deleted items should dissapear from the list"/></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="todomvc.WhenDeletingATask" skipped="0" tests="1" time="17.57" timestamp="2021-08-24 07:23:47"><testcase classname="todomvc.WhenDeletingATask" name="Deleted items should dissapear from the list"/></testsuite>
