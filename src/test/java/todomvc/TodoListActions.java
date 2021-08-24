@@ -11,6 +11,8 @@ public class TodoListActions extends UIInteractionSteps {
     public static final String COMPLETE_CHECKBOX = "//label[.='{0}']/preceding-sibling::input[@type='checkbox']";
     public static final String ITEM_LABELS = ".todo-list li label";
     public static final String FILTER_BUTTON = "//ul[@class='filters']//a[.='{0}']";
+    public static final String ITEM_LABEL = "//label[.='{0}']";
+    public static final String DELETE_ICON = "//label[.='{0}']/following-sibling::button";
 
     @Step
     public void openApplication() {
@@ -41,5 +43,11 @@ public class TodoListActions extends UIInteractionSteps {
     @Step("Filter tasks by {0}")
     public void filterBy(String filter) {
         $(FILTER_BUTTON,filter).click();
+    }
+
+    @Step("Delete task {0}")
+    public void deleteItem(String item) {
+        $(ITEM_LABEL, item).click();
+        $(DELETE_ICON, item).click();
     }
 }

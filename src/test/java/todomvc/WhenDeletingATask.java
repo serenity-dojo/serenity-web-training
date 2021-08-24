@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SerenityRunner.class)
-public class WhenCompletingATask {
+public class WhenDeletingATask {
 
     @Managed(driver = "chrome")
     WebDriver driver;
@@ -26,14 +26,12 @@ public class WhenCompletingATask {
     }
 
     @Test
-    public void activeTasksShouldNotShowCompletedTasks() {
+    public void deletedItemsShouldDissapearFromTheList() {
         todoList.addItems("Feed The Cat","Walk the dog");
 
-        todoList.completeItem("Feed The Cat");
+        todoList.deleteItem("Feed The Cat");
 
-        todoList.filterBy("Active");
-
-        Serenity.reportThat("The todo list should contain only uncompleted items",
+        Serenity.reportThat("The todo list should not contain deleted items",
                 () -> assertThat(todoList.items()).containsExactly("Walk the dog")
         );
     }
