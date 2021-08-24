@@ -36,17 +36,4 @@ public class WhenDeletingATask {
         );
     }
 
-    @Test
-    public void completedTasksShouldNotShowActiveTasks() {
-        todoList.addItems("Feed The Cat","Walk the dog");
-
-        todoList.completeItem("Feed The Cat");
-
-        todoList.filterBy("Completed");
-
-        Serenity.reportThat("The todo list should contain only uncompleted items",
-                () -> assertThat(todoList.items()).containsExactly("Feed The Cat")
-        );
-    }
-
 }
