@@ -64,7 +64,7 @@ public class WhenFilteringTasks {
 
         todoList.filterBy(filterBy);
 
-        reportThat("The todo list should contain only uncompleted items",
+        reportThat("The todo list should contain the expected items",
                 () -> assertThat(todoList.items()).hasSameElementsAs(filteredItems)
         );
     }
