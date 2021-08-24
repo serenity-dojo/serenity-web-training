@@ -3,6 +3,7 @@ package todomvc;
 import net.serenitybdd.core.steps.UIInteractionSteps;
 import net.thucydides.core.annotations.Step;
 
+import java.util.Arrays;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +19,7 @@ public class TodoListActions extends UIInteractionSteps {
 
     static final Logger LOGGER = LoggerFactory.getLogger(TodoListActions.class);
 
-    @Step
+    @Step("Open the TodoMVC application")
     public void openApplication() {
         openUrl("https://todomvc.com/examples/angularjs/#/");
     }
@@ -29,12 +30,13 @@ public class TodoListActions extends UIInteractionSteps {
         $(".new-todo").typeAndEnter(item);
     }
 
-    @Step("Add items {0}")
     public void addItems(String... items) {
+        addItems(Arrays.asList(items));
+    }
 
-        for (String item : items) {
-            addItem(item);
-        }
+    @Step("Add items {0}")
+    public void addItems(List<String> items) {
+        items.forEach(this::addItem);
     }
 
     public List<String> items() {
