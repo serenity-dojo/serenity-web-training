@@ -35,5 +35,4 @@ public class WhenDeletingATask {
                 () -> assertThat(todoList.items()).containsExactly("Walk the dog")
         );
     }
-
 }
