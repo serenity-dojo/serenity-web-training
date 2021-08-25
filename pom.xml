@@ -10,7 +10,7 @@
     <name>Sample Serenity BDD project using JUnit</name>
 
     <properties>
-        <serenity.version>2.5.10</serenity.version>
+        <serenity.version>2.5.11-SNAPSHOT</serenity.version>
         <serenity.maven.version>2.5.10</serenity.maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <encoding>UTF-8</encoding>
@@ -132,6 +132,11 @@
                     <reports>single-page-html</reports>
                 </configuration>
                 <dependencies>
+                    <dependency>
+                        <groupId>net.serenity-bdd</groupId>
+                        <artifactId>serenity-core</artifactId>
+                        <version>${serenity.version}</version>
+                    </dependency>
                     <dependency>
                         <groupId>net.serenity-bdd</groupId>
                         <artifactId>serenity-single-page-report</artifactId>
