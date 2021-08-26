@@ -2,9 +2,12 @@ package seleniumeasy;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
+import seleniumeasy.actions.FormPage;
+import seleniumeasy.actions.NavigateActions;
 import seleniumeasy.pageobjects.*;
 
 import java.util.List;
@@ -22,6 +25,9 @@ public class WhenInteractingWithInputForms {
     @Managed(driver = "chrome", uniqueSession = true)
     WebDriver driver;
 
+    @Steps
+    NavigateActions navigate;
+
     /**
      * Basic form fields:
      * Enter a message and check that the message is correctly displayed
@@ -32,7 +38,7 @@ public class WhenInteractingWithInputForms {
 
     @Test
     public void basicForms() {
-        singleInputFieldForm.open();
+        navigate.to(FormPage.SingleInputFieldForm);
 
         singleInputFieldForm.enterMessage("Hi there");
 
@@ -51,7 +57,7 @@ public class WhenInteractingWithInputForms {
 
     @Test
     public void basicFormsWithMultipleFields() {
-        twoInputFieldForm.open();
+        navigate.to(FormPage.TwoInputFieldForm);
 
         twoInputFieldForm.enterA("2");
         twoInputFieldForm.enterB("3");
@@ -72,7 +78,7 @@ public class WhenInteractingWithInputForms {
 
     @Test
     public void singleCheckbox() {
-        checkboxForm.open();
+        navigate.to(FormPage.CheckboxForm);
 
         checkboxForm.setAgeSelected();
 
@@ -178,8 +184,6 @@ public class WhenInteractingWithInputForms {
         hoverPage.hoverOverFigure(2);
         hoverPage.captionForFigure(2).shouldBeVisible();
         hoverPage.captionForFigure(2).shouldContainText("user2");
-
-
 
 
     }
