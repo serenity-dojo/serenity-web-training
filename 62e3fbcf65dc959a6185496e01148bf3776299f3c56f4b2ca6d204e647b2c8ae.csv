@@ -1,3 +1,3 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"When completing a task","Active tasks should not show completed tasks","SUCCESS","2021-08-26T05:58:05.923488003Z[Etc/UTC]","0.0","17.77"
-"When completing a task","Completed tasks should not show active tasks","SUCCESS","2021-08-26T05:58:24.730833251Z[Etc/UTC]","0.0","4.63"
+"When completing a task","Active tasks should not show completed tasks","SUCCESS","2021-08-29T17:28:53.667364545Z[Etc/UTC]","0.0","20.42"
+"When completing a task","Completed tasks should not show active tasks","SUCCESS","2021-08-29T17:29:15.506416085Z[Etc/UTC]","0.0","5.16"
