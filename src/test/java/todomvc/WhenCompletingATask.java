@@ -1,6 +1,5 @@
 package todomvc;
 
-import net.serenitybdd.core.Serenity;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -18,13 +17,13 @@ public class WhenCompletingATask {
     @Managed(driver = "chrome")
     WebDriver driver;
 
-    @Steps
-    TodoListActions todoList;
-
     @Before
     public void openApp() {
         todoList.openApplication();
     }
+
+    @Steps
+    TodoListActions todoList;
 
     @Test
     public void activeTasksShouldNotShowCompletedTasks() {
@@ -34,12 +33,7 @@ public class WhenCompletingATask {
 
         todoList.filterBy("Active");
 
-        reportThat("The todo list should contain only uncompleted items",
-                () -> assertThat(todoList.items()).containsExactly("Walk the dog")
-        );
-        reportThat("The correct number of remaining todo items should be displayed",
-                () -> assertThat(todoList.items()).containsExactly("Walk the dog")
-        );
+        assertThat(todoList.items()).containsExactly("Walk the dog");
     }
 
     @Test

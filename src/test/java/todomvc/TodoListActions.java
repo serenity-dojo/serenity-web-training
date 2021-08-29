@@ -8,7 +8,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static todomvc.TodoListPage.*;
+import static todomvc.TodoEntry.*;
+import static todomvc.TodoListForm.*;
 
 public class TodoListActions extends UIInteractionSteps {
 
