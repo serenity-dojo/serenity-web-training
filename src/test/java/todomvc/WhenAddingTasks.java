@@ -1,18 +1,17 @@
 package todomvc;
 
 import net.serenitybdd.core.Serenity;
-import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SerenityRunner.class)
-public class WhenAddingTasks {
+class WhenAddingTasks {
 
     @Managed(driver = "chrome")
     WebDriver driver;
@@ -20,34 +19,55 @@ public class WhenAddingTasks {
     @Steps
     TodoListActions todoList;
 
-    @Before
-    public void openApp() {
+    @BeforeEach
+    void openApp() {
         todoList.openApplication();
     }
 
-    @Test
-    public void addingASingleTask() {
-        todoList.addItem("Feed The Cat");
+    @Nested
+    class ToAnEmptyList {
 
-        Serenity.reportThat("The todo list should contain 'Feed The Cat",
-                () -> assertThat(todoList.items()).containsExactly("Feed The Cat")
-        );
-        Serenity.reportThat("The todo list count should be 1",
-                () -> assertThat(todoList.itemLeftCount()).isEqualTo(1)
-        );
+        @Test
+        void addingASingleTask() {
+            todoList.addItem("Feed The Cat");
 
+            Serenity.reportThat("The todo list should contain 'Feed The Cat",
+                    () -> assertThat(todoList.items()).containsExactly("Feed The Cat")
+            );
+        }
+
+        @Test
+        void addingMultipleTasks() {
+            todoList.addItems("Feed The Cat", "Walk the dog");
+
+            Serenity.reportThat("The todo list should contain all the entries in the expected order",
+                    () -> assertThat(todoList.items()).containsExactly("Feed The Cat", "Walk the dog")
+            );
+        }
     }
 
-    @Test
-    public void addingMultipleTasks() {
-        todoList.addItems("Feed The Cat","Walk the dog");
+    @Nested
+    class ToAListWithExistingEntries {
 
-        Serenity.reportThat("The todo list should contain all the entries in the expected order",
-                () -> assertThat(todoList.items()).containsExactly("Feed The Cat","Walk the dog")
-        );
-        Serenity.reportThat("The todo list count should be 2",
-                () -> assertThat(todoList.itemLeftCount()).isEqualTo(2)
-        );
+        @BeforeEach
+        void aListWithSomeEntriesAlreadyAdded() {
+            todoList.addItems("Feed The Cat", "Walk the dog");
+        }
+
+        @Test
+        void theNewItemsShouldBeAddedAtTheEndOfTheList() {
+            todoList.addItem("Fleece the sheep");
+
+            Serenity.reportThat("The todo list should contain all the entries in the expected order",
+                    () -> assertThat(todoList.items()).containsExactly("Feed The Cat", "Walk the dog", "Fleece the sheep")
+            );
+        }
     }
+
+    @AfterEach
+    public void closeApp() {
+        todoList.clearList();
+    }
+
 
 }

@@ -1,0 +1,4 @@
+Filter,        Todo Items,                 Completed Item,  Filtered Items
+Active,        Feed the cat;Walk the dog,  Feed the cat,    Walk the dog
+Completed,     Feed the cat;Walk the dog,  Feed the cat,    Feed the cat
+All,           Feed the cat;Walk the dog,  Feed the cat,    Feed the cat;Walk the dog

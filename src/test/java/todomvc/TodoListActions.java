@@ -5,6 +5,8 @@ import net.thucydides.core.annotations.Step;
 
 import java.util.Arrays;
 import java.util.List;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -58,5 +60,9 @@ public class TodoListActions extends UIInteractionSteps {
     public void deleteItem(String item) {
         $(ITEM_LABEL, item).click();
         $(DELETE_ICON, item).click();
+    }
+
+    public void clearList() {
+        ((JavascriptExecutor) getDriver()).executeScript("localStorage.clear();");
     }
 }

@@ -3,21 +3,20 @@ package todomvc;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
 import static net.serenitybdd.core.Serenity.reportThat;
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SerenityRunner.class)
+//@RunWith(SerenityRunner.class)
 public class WhenCompletingATask {
 
     @Managed(driver = "chrome")
     WebDriver driver;
 
-    @Before
+    @BeforeEach
     public void openApp() {
         todoList.openApplication();
     }

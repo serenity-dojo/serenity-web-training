@@ -4,14 +4,12 @@ import net.serenitybdd.core.Serenity;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SerenityRunner.class)
 public class WhenDeletingATask {
 
     @Managed(driver = "chrome")
@@ -20,7 +18,7 @@ public class WhenDeletingATask {
     @Steps
     TodoListActions todoList;
 
-    @Before
+    @BeforeEach
     public void openApp() {
         todoList.openApplication();
     }
