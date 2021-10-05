@@ -15,7 +15,7 @@ import static serenityswag.authentication.User.STANDARD_USER;
 @RunWith(SerenityRunner.class)
 public class WhenLoggingOn {
 
-    @Managed
+    @Managed(driver = "chrome")
     WebDriver driver;
 
     @Steps
