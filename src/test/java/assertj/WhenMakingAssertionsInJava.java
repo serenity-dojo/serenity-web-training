@@ -11,10 +11,10 @@ import static org.junit.Assert.assertTrue;
 public class WhenMakingAssertionsInJava {
     @Test
     public void traditionalAssertions() {
-        int age = 40;
+        int age = 21;
         List<Integer> ages = Arrays.asList(10, 20, 21, 30);
 
-        assertTrue("The list of ages should contain 40", ages.contains(age));
+        assertTrue("The list of ages should contain 21", ages.contains(age));
     }
 
     @Test
