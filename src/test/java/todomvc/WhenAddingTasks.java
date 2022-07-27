@@ -1,16 +1,19 @@
 package todomvc;
 
 import net.serenitybdd.core.Serenity;
+import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(SerenityJUnit5Extension.class)
 class WhenAddingTasks {
 
     @Managed(driver = "chrome")

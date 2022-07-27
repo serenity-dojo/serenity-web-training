@@ -1,9 +1,11 @@
 package todomvc;
 
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
+import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.junit.annotations.Concurrent;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.runner.RunWith;
@@ -16,6 +18,7 @@ import static java.util.Arrays.stream;
 import static net.serenitybdd.core.Serenity.reportThat;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@ExtendWith(SerenityJUnit5Extension.class)
 public class WhenFilteringTasks {
 
     @Managed(driver = "chrome")
