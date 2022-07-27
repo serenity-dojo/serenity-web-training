@@ -25,7 +25,7 @@ public class WhenInteractingWithInputForms {
     /**
      * Basic form fields:
      * Enter a message and check that the message is correctly displayed
-     * https://www.seleniumeasy.com/test/basic-first-form-demo.html
+     * https://demo.seleniumeasy.com/basic-first-form-demo.html
      */
 
     SingleInputFieldForm singleInputFieldForm;
@@ -44,7 +44,7 @@ public class WhenInteractingWithInputForms {
     /**
      * Basic form fields (part 2)
      * Enter two values and calculate the result
-     * https://www.seleniumeasy.com/test/basic-first-form-demo.html
+     * https://demo.seleniumeasy.com/basic-first-form-demo.html
      */
 
     TwoInputFieldForm twoInputFieldForm;
@@ -65,7 +65,7 @@ public class WhenInteractingWithInputForms {
     /**
      * Checkboxes
      * Check that a message appears when you click the checkbox
-     * https://www.seleniumeasy.com/test/basic-checkbox-demo.html
+     * https://demo.seleniumeasy.com/basic-checkbox-demo.html
      */
 
     CheckboxForm checkboxForm;
@@ -100,7 +100,7 @@ public class WhenInteractingWithInputForms {
     /**
      * Radio buttons
      * Check that a message appears when you click the radio button
-     * https://www.seleniumeasy.com/test/basic-radiobutton-demo.html
+     * https://demo.seleniumeasy.com/basic-radiobutton-demo.html
      */
     RadioButtonsForm radioButtonsForm;
 
@@ -132,7 +132,7 @@ public class WhenInteractingWithInputForms {
 
     /**
      * Dropdown lists
-     * https://www.seleniumeasy.com/test/basic-select-dropdown-demo.html
+     * https://demo.seleniumeasy.com/basic-select-dropdown-demo.html
      */
     SelectListForm selectListForm;
 
@@ -150,7 +150,7 @@ public class WhenInteractingWithInputForms {
 
     /**
      * Multi-Select Dropdown lists
-     * https://www.seleniumeasy.com/test/basic-select-dropdown-demo.html
+     * https://demo.seleniumeasy.com/basic-select-dropdown-demo.html
      */
     MultiSelectListForm multiSelectListForm;
 

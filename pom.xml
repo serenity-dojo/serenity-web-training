@@ -9,8 +9,8 @@
     <name>Sample Serenity BDD project using JUnit</name>
 
     <properties>
-        <serenity.version>2.5.1</serenity.version>
-        <serenity.maven.version>2.5.1</serenity.maven.version>
+        <serenity.version>3.3.0</serenity.version>
+        <serenity.maven.version>3.3.0</serenity.maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <encoding>UTF-8</encoding>
         <tags></tags>
@@ -55,13 +55,7 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.20.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-            <version>1.3</version>
+            <version>3.23.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

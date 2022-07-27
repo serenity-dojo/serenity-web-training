@@ -2,7 +2,7 @@ package seleniumeasy.pageobjects;
 
 import net.thucydides.core.annotations.DefaultUrl;
 
-@DefaultUrl("https://www.seleniumeasy.com/test/basic-radiobutton-demo.html")
+@DefaultUrl("https://demo.seleniumeasy.com/basic-radiobutton-demo.html")
 public class RadioButtonsForm extends SeleniumEasyForm {
     public void selectOption(String value) {
         inRadioButtonGroup("optradio").selectByValue(value);

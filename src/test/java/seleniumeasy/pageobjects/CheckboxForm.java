@@ -2,7 +2,7 @@ package seleniumeasy.pageobjects;
 
 import net.thucydides.core.annotations.DefaultUrl;
 
-@DefaultUrl("https://www.seleniumeasy.com/test/basic-checkbox-demo.html")
+@DefaultUrl("https://demo.seleniumeasy.com/basic-checkbox-demo.html")
 public class CheckboxForm extends SeleniumEasyForm {
 
     public void setAgeSelected() {

@@ -2,7 +2,7 @@ package seleniumeasy.pageobjects;
 
 import net.thucydides.core.annotations.DefaultUrl;
 
-@DefaultUrl("https://www.seleniumeasy.com/test/basic-first-form-demo.html")
+@DefaultUrl("https://demo.seleniumeasy.com/basic-first-form-demo.html")
 public class TwoInputFieldForm extends SeleniumEasyForm {
     public void enterA(String value) {
         $("#sum1").sendKeys(value);

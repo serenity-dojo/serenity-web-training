@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 
 import java.time.Duration;
 
-@DefaultUrl("https://www.seleniumeasy.com/test/bootstrap-alert-messages-demo.html")
+@DefaultUrl("https://demo.seleniumeasy.com/bootstrap-alert-messages-demo.html")
 public class AlertMessagePage extends PageObject {
 
     private static final By ALERT_SUCCESS_MESSAGE = By.cssSelector(".alert-success ");

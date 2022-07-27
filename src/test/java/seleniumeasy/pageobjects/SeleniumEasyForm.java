@@ -20,7 +20,8 @@ public abstract class SeleniumEasyForm extends PageObject {
     @WhenPageOpens
     public void clearPopupWindow() {
         if ($(POPUP_WINDOW_CLOSE_ICON).isPresent()) {
-            waitFor(visibilityOfElementLocated(POPUP_WINDOW_CLOSE_ICON)).click();
+            waitFor(visibilityOfElementLocated(POPUP_WINDOW_CLOSE_ICON));
+            $(POPUP_WINDOW_CLOSE_ICON).click();
             waitFor(invisibilityOfElementLocated(POPUP_WINDOW_CLOSE_ICON));
         }
     }

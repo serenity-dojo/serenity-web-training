@@ -9,7 +9,7 @@ import java.time.Duration;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.invisibilityOfElementWithText;
 
-@DefaultUrl("https://www.seleniumeasy.com/test/dynamic-data-loading-demo.html")
+@DefaultUrl("https://demo.seleniumeasy.com/dynamic-data-loading-demo.html")
 public class DynamicDataPage extends PageObject {
 
     private static final By USER_DETAILS_PANEL = By.id("loading");
