@@ -20,7 +20,6 @@ import static net.serenitybdd.core.Serenity.reportThat;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SerenityParameterizedRunner.class)
-@Concurrent
 public class WhenFilteringTasks {
 
     @Managed(driver = "chrome")
