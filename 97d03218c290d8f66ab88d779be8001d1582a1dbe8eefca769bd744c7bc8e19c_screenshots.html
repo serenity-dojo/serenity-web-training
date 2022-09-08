@@ -23,31 +23,19 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-<!--[if IE 7]>
-<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
-
-<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
-<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
-
-<!-- JQuery -->
-<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
-<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
-<script src="chartist/dist/chartist.min.js"></script>
-<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
-<!-- Required Stylesheets -->
+<link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css"><!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
 <link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
 
 <!-- Required Javascript -->
 <script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
-<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
-<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
-<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+<link type="text/css" href="datatables/1.11.3/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.11.3/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.11.3/time-elapsed-dhms.js"></script>
 
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="bootstrap/js/bootstrap.min.js"></script>
 
-<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
-<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
 
 <script>
     jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
@@ -71,7 +59,16 @@
 </script>
 <link rel="stylesheet" href="css/core.css"/>
 <link rel="stylesheet" href="css/link.css"/>
-<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
 <link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
 <script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
@@ -117,7 +114,7 @@
         <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
         <div id="projectname-banner" style="float:right">
             <span class="projectname">
-                <span class="projecttitle"></span>
+                <span class="projecttitle">Serenity BDD Report</span>
                 <span class="projectsubtitle"></span>
             </span>
         </div>
@@ -145,16 +142,16 @@
 <div>
     <ul class="nav nav-tabs" role="tablist">
         <li class="active">
-            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
         </li>
         <li >
-            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
         </li>
         <li >
-            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="bi bi-chat-text"></i> Stories</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 29-08-2021 17:29</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 08-09-2022 15:54</span>
     <br style="clear:left"/>
 </div>
 
@@ -169,7 +166,7 @@
                         <td>
                             <div>
                                 <h3 class="discreet-story-header">
-                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
                                     <span class="story-header-title">When Filtering Tasks </span>
                                     <span class="badge tag-badge" style="">Story</span>
                                 </h3>
@@ -189,7 +186,7 @@
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
                             <span class="test-case-title">
                                 <span class="success-color">Should show correctly filtered items
                                     <span class="related-issue-title"></span>
@@ -207,46 +204,44 @@
 
     <div class="story-title">
         <h3>Scenario:</h3>
-        <div class="scenario">Open the TodoMVC application<br>Add items: [&lt;Completed Item&gt;, Walk the dog]<br>Complete item &lt;Completed Item&gt;<br>Filter tasks by &lt;Filter By&gt;<br>The todo list should contain the expected items</div>
+        <div class="scenario">Open the TodoMVC application<br>Add items [&lt;Completed Item&gt;, Walk the dog]<br>Complete item &lt;Completed Item&gt;<br>Filter tasks by &lt;Filter By&gt;<br>The todo list should contain the expected items</div>
     </div>
 
     <div id="beforetable"></div>
     <div id="contenttilttle">
         <div class="slider-wrapper theme-default">
             <div id="slider">
-                <img src="252adb50e152069520aa09287313615f15cc0c9a7b1f511e8ba12ae8119d3538.png" title=" Should show correctly filtered items " width="800"/>
-                <img src="252adb50e152069520aa09287313615f15cc0c9a7b1f511e8ba12ae8119d3538.png" title=" Open the TodoMVC application" width="800"/>
-                <img src="3d6177f8ba688989ac8a101549cd64bb0dac48efdc8761867f9fb09d40ec28df.png" title=" Add items: [Feed the cat, Walk the dog]" width="800"/>
-                <img src="3d6177f8ba688989ac8a101549cd64bb0dac48efdc8761867f9fb09d40ec28df.png" title=" Add item Feed the cat" width="800"/>
-                <img src="453cfc5737cf893f4a8efa992356699876c4ef980623e1599a43a9f6dcc0167c.png" title=" Add item Feed the cat (completed)" width="800"/>
-                <img src="453cfc5737cf893f4a8efa992356699876c4ef980623e1599a43a9f6dcc0167c.png" title=" Add item Walk the dog" width="800"/>
-                <img src="b21df8bd094b0d155e53681528e5ecbceecfca73a21e4a4ededa79f95603cb1c.png" title=" Add item Walk the dog (completed)" width="800"/>
-                <img src="b21df8bd094b0d155e53681528e5ecbceecfca73a21e4a4ededa79f95603cb1c.png" title=" Add items: [Feed the cat, Walk the dog] (completed)" width="800"/>
-                <img src="e085f8782bb7e874e6bff6d4d7da98f9daef4b412e92fcc156088b21e5dc9db1.png" title=" Complete item Feed the cat" width="800"/>
-                <img src="b5b997aeea0b10fa8fd50a4038ea9f33f273502b678e59f8cfb3d72b1d7897d0.png" title=" Filter tasks by Active" width="800"/>
-                <img src="b5b997aeea0b10fa8fd50a4038ea9f33f273502b678e59f8cfb3d72b1d7897d0.png" title=" The todo list should contain the expected items" width="800"/>
-                <img src="252adb50e152069520aa09287313615f15cc0c9a7b1f511e8ba12ae8119d3538.png" title=" Should show correctly filtered items " width="800"/>
-                <img src="252adb50e152069520aa09287313615f15cc0c9a7b1f511e8ba12ae8119d3538.png" title=" Open the TodoMVC application" width="800"/>
-                <img src="3d6177f8ba688989ac8a101549cd64bb0dac48efdc8761867f9fb09d40ec28df.png" title=" Add items: [Feed the cat, Walk the dog]" width="800"/>
-                <img src="3d6177f8ba688989ac8a101549cd64bb0dac48efdc8761867f9fb09d40ec28df.png" title=" Add item Feed the cat" width="800"/>
-                <img src="453cfc5737cf893f4a8efa992356699876c4ef980623e1599a43a9f6dcc0167c.png" title=" Add item Feed the cat (completed)" width="800"/>
-                <img src="453cfc5737cf893f4a8efa992356699876c4ef980623e1599a43a9f6dcc0167c.png" title=" Add item Walk the dog" width="800"/>
-                <img src="b21df8bd094b0d155e53681528e5ecbceecfca73a21e4a4ededa79f95603cb1c.png" title=" Add item Walk the dog (completed)" width="800"/>
-                <img src="b21df8bd094b0d155e53681528e5ecbceecfca73a21e4a4ededa79f95603cb1c.png" title=" Add items: [Feed the cat, Walk the dog] (completed)" width="800"/>
-                <img src="31e7aca61461d095abfc6c8e9e5c1feb6435950ebd5482c8e6fb0831a8cd7227.png" title=" Complete item Feed the cat" width="800"/>
-                <img src="7764a68d20a2fd8a86fe14a47da4dcb472161409b2de2be35a42ba275d65034c.png" title=" Filter tasks by Completed" width="800"/>
-                <img src="7764a68d20a2fd8a86fe14a47da4dcb472161409b2de2be35a42ba275d65034c.png" title=" The todo list should contain the expected items" width="800"/>
-                <img src="252adb50e152069520aa09287313615f15cc0c9a7b1f511e8ba12ae8119d3538.png" title=" Should show correctly filtered items " width="800"/>
-                <img src="252adb50e152069520aa09287313615f15cc0c9a7b1f511e8ba12ae8119d3538.png" title=" Open the TodoMVC application" width="800"/>
-                <img src="3d6177f8ba688989ac8a101549cd64bb0dac48efdc8761867f9fb09d40ec28df.png" title=" Add items: [Feed the cat, Walk the dog]" width="800"/>
-                <img src="3d6177f8ba688989ac8a101549cd64bb0dac48efdc8761867f9fb09d40ec28df.png" title=" Add item Feed the cat" width="800"/>
-                <img src="453cfc5737cf893f4a8efa992356699876c4ef980623e1599a43a9f6dcc0167c.png" title=" Add item Feed the cat (completed)" width="800"/>
-                <img src="453cfc5737cf893f4a8efa992356699876c4ef980623e1599a43a9f6dcc0167c.png" title=" Add item Walk the dog" width="800"/>
-                <img src="b21df8bd094b0d155e53681528e5ecbceecfca73a21e4a4ededa79f95603cb1c.png" title=" Add item Walk the dog (completed)" width="800"/>
-                <img src="b21df8bd094b0d155e53681528e5ecbceecfca73a21e4a4ededa79f95603cb1c.png" title=" Add items: [Feed the cat, Walk the dog] (completed)" width="800"/>
-                <img src="e085f8782bb7e874e6bff6d4d7da98f9daef4b412e92fcc156088b21e5dc9db1.png" title=" Complete item Feed the cat" width="800"/>
-                <img src="907cf72c72dd0e85e165193ab5bde9b87a7bc70366a4a6b90545fb4d0cad8077.png" title=" Filter tasks by All" width="800"/>
-                <img src="907cf72c72dd0e85e165193ab5bde9b87a7bc70366a4a6b90545fb4d0cad8077.png" title=" The todo list should contain the expected items: <span class='success-color'>SUCCESS</span>" width="800"/>
+                <img src="a385aec9d35a6fc7f4eb9c6069bbb0e4b3317c3d623e54fd3195ad5d99d9ebe7.png" title=" Should show correctly filtered items " width="800"/>
+                <img src="a385aec9d35a6fc7f4eb9c6069bbb0e4b3317c3d623e54fd3195ad5d99d9ebe7.png" title=" Open the TodoMVC application" width="800"/>
+                <img src="4cfe8671327069f61b655c499a0096c6435941bdafa9e4eb90e803301da501de.png" title=" Add items [Feed the cat, Walk the dog]" width="800"/>
+                <img src="4cfe8671327069f61b655c499a0096c6435941bdafa9e4eb90e803301da501de.png" title=" Add item Feed the cat" width="800"/>
+                <img src="4cfe8671327069f61b655c499a0096c6435941bdafa9e4eb90e803301da501de.png" title=" Add item Walk the dog" width="800"/>
+                <img src="d903bbfeae39f77a37226ced035b5177f0bafecddd4b68adee952fa9d5fec1ed.png" title=" Add item Walk the dog (completed)" width="800"/>
+                <img src="d903bbfeae39f77a37226ced035b5177f0bafecddd4b68adee952fa9d5fec1ed.png" title=" Add items [Feed the cat, Walk the dog] (completed)" width="800"/>
+                <img src="c832c7b0cda36bba1751059e1425ae24948cf75ae904a912dbdf0f18c1e00931.png" title=" Complete item Feed the cat" width="800"/>
+                <img src="b0e932c9dcefb32621a6fbf471bf47a366009251249472b5bb0abaad70140302.png" title=" Filter tasks by Active" width="800"/>
+                <img src="b0e932c9dcefb32621a6fbf471bf47a366009251249472b5bb0abaad70140302.png" title=" The todo list should contain the expected items" width="800"/>
+                <img src="a385aec9d35a6fc7f4eb9c6069bbb0e4b3317c3d623e54fd3195ad5d99d9ebe7.png" title=" Should show correctly filtered items " width="800"/>
+                <img src="a385aec9d35a6fc7f4eb9c6069bbb0e4b3317c3d623e54fd3195ad5d99d9ebe7.png" title=" Open the TodoMVC application" width="800"/>
+                <img src="4cfe8671327069f61b655c499a0096c6435941bdafa9e4eb90e803301da501de.png" title=" Add items [Feed the cat, Walk the dog]" width="800"/>
+                <img src="4cfe8671327069f61b655c499a0096c6435941bdafa9e4eb90e803301da501de.png" title=" Add item Feed the cat" width="800"/>
+                <img src="4cfe8671327069f61b655c499a0096c6435941bdafa9e4eb90e803301da501de.png" title=" Add item Walk the dog" width="800"/>
+                <img src="d903bbfeae39f77a37226ced035b5177f0bafecddd4b68adee952fa9d5fec1ed.png" title=" Add item Walk the dog (completed)" width="800"/>
+                <img src="d903bbfeae39f77a37226ced035b5177f0bafecddd4b68adee952fa9d5fec1ed.png" title=" Add items [Feed the cat, Walk the dog] (completed)" width="800"/>
+                <img src="7dd26d835bb12ec4d2f6b745569fb6f29346c767af82fdc4d304da217fad8976.png" title=" Complete item Feed the cat" width="800"/>
+                <img src="7f16ba1aa4dcff971ff1b5b0f629527e287f3fc02e6f9e0ef1f1afc5e371d85e.png" title=" Filter tasks by Completed" width="800"/>
+                <img src="7f16ba1aa4dcff971ff1b5b0f629527e287f3fc02e6f9e0ef1f1afc5e371d85e.png" title=" The todo list should contain the expected items" width="800"/>
+                <img src="a385aec9d35a6fc7f4eb9c6069bbb0e4b3317c3d623e54fd3195ad5d99d9ebe7.png" title=" Should show correctly filtered items " width="800"/>
+                <img src="a385aec9d35a6fc7f4eb9c6069bbb0e4b3317c3d623e54fd3195ad5d99d9ebe7.png" title=" Open the TodoMVC application" width="800"/>
+                <img src="bb867235f7a4c601a31db25a16b70c2de28b5e27b186c8ccf74515b745fada41.png" title=" Add items [Feed the cat, Walk the dog]" width="800"/>
+                <img src="bb867235f7a4c601a31db25a16b70c2de28b5e27b186c8ccf74515b745fada41.png" title=" Add item Feed the cat" width="800"/>
+                <img src="4cfe8671327069f61b655c499a0096c6435941bdafa9e4eb90e803301da501de.png" title=" Add item Feed the cat (completed)" width="800"/>
+                <img src="4cfe8671327069f61b655c499a0096c6435941bdafa9e4eb90e803301da501de.png" title=" Add item Walk the dog" width="800"/>
+                <img src="d903bbfeae39f77a37226ced035b5177f0bafecddd4b68adee952fa9d5fec1ed.png" title=" Add item Walk the dog (completed)" width="800"/>
+                <img src="d903bbfeae39f77a37226ced035b5177f0bafecddd4b68adee952fa9d5fec1ed.png" title=" Add items [Feed the cat, Walk the dog] (completed)" width="800"/>
+                <img src="80e4375d2da316bacdbfdf2e77dd86ca9d3f9b2736f4677e22caf570123222ce.png" title=" Complete item Feed the cat" width="800"/>
+                <img src="1673b5680acd6f7e8e2f6d80cdc4ac45304714ce71181fdd6e63739be4026cfb.png" title=" Filter tasks by All" width="800"/>
+                <img src="1673b5680acd6f7e8e2f6d80cdc4ac45304714ce71181fdd6e63739be4026cfb.png" title=" The todo list should contain the expected items: <span class='success-color'>SUCCESS</span>" width="800"/>
             </div>
         </div>
 
@@ -255,7 +250,7 @@
 </div>
 <div id="beforefooter"></div>
 <div id="bottomfooter">
-    <span class="version">Serenity BDD version 2.5.10</span>
+    <span class="version">Serenity BDD version 3.3.2</span>
 </div>
 </body>
 </html>
