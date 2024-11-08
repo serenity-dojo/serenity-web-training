@@ -2,17 +2,23 @@ package serenityswag.toolshop;
 
 import net.serenitybdd.core.steps.UIInteractions;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
+import net.serenitybdd.screenplay.actions.Upload;
+import net.thucydides.core.annotations.findby.By;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.openqa.selenium.WebElement;
 
+import java.net.URISyntaxException;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SerenityJUnit5Extension.class)
 public class WhenSearchingForAProduct extends UIInteractions {
+
+    private static final String MESSAGE_TEXT ="A very long and detailed message to customer service.";
 
     @BeforeEach
     void openSite() {
@@ -58,4 +64,14 @@ public class WhenSearchingForAProduct extends UIInteractions {
 
     }
 
+    @Test
+    void shouldSortByName() {
+        var sortDropdown = $("[data-test=sort]");
+
+        sortDropdown.select().byVisibleText("Name (A - Z)");
+        waitFor(250).milliseconds();
+
+        List<String> displayedProducts = getDisplayedProducts();
+        assertThat(displayedProducts).isSorted();
+    }
 }
