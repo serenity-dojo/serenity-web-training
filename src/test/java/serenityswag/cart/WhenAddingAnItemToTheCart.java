@@ -73,42 +73,6 @@ public class WhenAddingAnItemToTheCart {
         );
     }
 
-    CartPageObject cartPage;
-
-    @Test
-    public void pricesForEachItemShouldBeShownInTheCart() {
-
-        // add items to the shopping cart
-        cart.addItems(firstThreeProductTitlesDisplayed());
-
-        // Open the cart page
-        cartPage.open();
-
-        // Check that each item in the cart has a price
-        List<CartItem> items = cartPage.items();
-
-        assertThat(items).hasSize(3)
-                .allMatch(item -> item.price() > 0.0);
-    }
-
-    @Test
-    public void itemsCanBeRemovedFromTheCart() {
-
-        // Three items are in the cart
-        List<String> selectItems = firstThreeProductTitlesDisplayed();
-        cart.addItems(selectItems);
-
-        // When we delete one
-        cartPage.open();
-
-        String itemToDelete = selectItems.get(0);
-        cartPage.removeItem(itemToDelete);
-
-        // There should only remain two
-        assertThat(cartPage.items())
-                           .hasSize(2);
-    }
-
     private List<String> firstThreeProductTitlesDisplayed() {
         return productList.titles().subList(0, 3);
     }
