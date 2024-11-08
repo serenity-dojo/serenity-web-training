@@ -1,7 +1,7 @@
 package serenityswag.cart;
 
+import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.steps.UIInteractionSteps;
-import net.thucydides.core.annotations.Step;
 import serenityswag.inventory.ProductList;
 
 import java.util.List;

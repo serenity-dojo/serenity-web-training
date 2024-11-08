@@ -1,16 +1,14 @@
 package serenityswag.cart;
 
+import net.serenitybdd.annotations.Managed;
+import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Steps;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import serenityswag.authentication.LoginActions;
-import serenityswag.cart.CartActions;
-import serenityswag.cart.ShoppingCartIcon;
 import serenityswag.inventory.ProductList;
 
 import java.util.List;
