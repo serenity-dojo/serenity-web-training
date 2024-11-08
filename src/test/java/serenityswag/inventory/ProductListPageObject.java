@@ -10,11 +10,11 @@ public class ProductListPageObject extends PageObject {
         return findAll(".inventory_item_name").textContents();
     }
 
-    public void openProductDetailsFor(String productName) {
-        find(By.linkText(productName)).click();
+    public void openProductDetailsFor(String itemName) {
+        find(By.linkText(itemName)).click();
     }
 
     public String imageTextForProduct(String productName) {
-        return find("//div[@class='inventory_item'][contains(.,'" + productName + "')]//img").getAttribute("alt");
+        return $("//div[@class='inventory_item'][contains(.,'" + productName + "')]//img").getAttribute("alt");
     }
 }

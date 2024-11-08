@@ -9,8 +9,8 @@ public class LoginActions extends UIInteractionSteps {
     public void as(User user) {
         openUrl("https://www.saucedemo.com");
 
-        $("[data-test='username']").sendKeys(user.getUsername());
-        $("[data-test='password']").sendKeys(user.getPassword());
-        $("[data-test='login-button']").click();
+        $(LoginForm.USER_NAME).sendKeys(user.getUsername());
+        $(LoginForm.PASSWORD).sendKeys(user.getPassword());
+        $(LoginForm.LOGIN_BUTTON).click();
     }
 }
