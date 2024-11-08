@@ -1,8 +1,7 @@
 package serenityswag.authentication;
 
+import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.steps.UIInteractionSteps;
-import net.thucydides.core.annotations.Step;
-import org.openqa.selenium.By;
 
 public class LoginActions extends UIInteractionSteps {
     @Step("Log in as {0}")

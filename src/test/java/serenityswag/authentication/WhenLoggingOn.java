@@ -2,8 +2,8 @@ package serenityswag.authentication;
 
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Steps;
+import net.serenitybdd.annotations.Managed;
+import net.serenitybdd.annotations.Steps;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
