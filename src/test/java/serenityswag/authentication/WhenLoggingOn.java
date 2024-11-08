@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 import serenityswag.authentication.actions.LoginActions;
+import serenityswag.authentication.actions.User;
 import serenityswag.inventory.InventoryPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -26,7 +27,7 @@ public class WhenLoggingOn {
     @Test
     public void usersCanLogOnViaTheHomePage() {
 
-        login.asAStandardUser();
+        login.as(User.STANDARD_USER);
 
         // Should see product catalog
         assertThat(inventoryPage.getHeading()).isEqualToIgnoringCase("Products");
