@@ -14,7 +14,7 @@ import serenityswag.inventory.InventoryPage;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SerenityJUnit5Extension.class)
-public class WhenLoggingOn {
+class WhenLoggingOn {
 
     @Managed
     WebDriver driver;
@@ -25,7 +25,7 @@ public class WhenLoggingOn {
     InventoryPage inventoryPage;
 
     @Test
-    public void usersCanLogOnViaTheHomePage() {
+    void usersCanLogOnViaTheHomePage() {
 
         login.as(User.STANDARD_USER);
 
