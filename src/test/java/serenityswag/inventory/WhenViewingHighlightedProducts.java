@@ -1,12 +1,12 @@
 package serenityswag.inventory;
 
+import net.serenitybdd.annotations.Managed;
+import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.core.Serenity;
-import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Steps;
+import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import org.assertj.core.api.SoftAssertions;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 import serenityswag.authentication.LoginActions;
 import serenityswag.authentication.User;
@@ -15,8 +15,8 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SerenityRunner.class)
-public class WhenViewingHighlightedProducts {
+@ExtendWith(SerenityJUnit5Extension.class)
+class WhenViewingHighlightedProducts {
 
     @Managed(driver = "chrome")
     WebDriver driver;
