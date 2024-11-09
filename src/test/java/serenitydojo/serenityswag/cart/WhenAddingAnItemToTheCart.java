@@ -1,4 +1,4 @@
-package serenityswag.cart;
+package serenitydojo.serenityswag.cart;
 
 import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.annotations.Steps;
@@ -8,13 +8,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import serenityswag.authentication.LoginActions;
-import serenityswag.inventory.ProductList;
+import serenitydojo.serenityswag.authentication.LoginActions;
+import serenitydojo.serenityswag.inventory.ProductList;
 
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static serenityswag.authentication.User.STANDARD_USER;
+import static serenitydojo.serenityswag.authentication.User.STANDARD_USER;
 
 @RunWith(SerenityRunner.class)
 public class WhenAddingAnItemToTheCart {

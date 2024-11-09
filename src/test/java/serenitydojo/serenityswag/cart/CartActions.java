@@ -1,8 +1,8 @@
-package serenityswag.cart;
+package serenitydojo.serenityswag.cart;
 
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.steps.UIInteractionSteps;
-import serenityswag.inventory.ProductList;
+import serenitydojo.serenityswag.inventory.ProductList;
 
 import java.util.List;
 

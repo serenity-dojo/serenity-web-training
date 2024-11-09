@@ -1,4 +1,4 @@
-package serenityswag.authentication;
+package serenitydojo.serenityswag.authentication;
 
 import org.openqa.selenium.By;
 

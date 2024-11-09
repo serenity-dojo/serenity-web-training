@@ -1,4 +1,4 @@
-package serenityswag.inventory;
+package serenitydojo.serenityswag.inventory;
 
 import net.serenitybdd.core.steps.UIInteractionSteps;
 import net.serenitybdd.annotations.Step;

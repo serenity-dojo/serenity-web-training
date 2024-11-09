@@ -1,4 +1,4 @@
-package serenityswag.authentication;
+package serenitydojo.serenityswag.authentication;
 
 public enum User {
     STANDARD_USER("standard_user","secret_sauce","a standard user"),

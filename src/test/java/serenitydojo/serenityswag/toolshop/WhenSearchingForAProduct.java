@@ -1,4 +1,4 @@
-package serenityswag.toolshop;
+package serenitydojo.serenityswag.toolshop;
 
 import net.serenitybdd.core.steps.UIInteractions;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
@@ -25,6 +25,7 @@ public class WhenSearchingForAProduct extends UIInteractions {
     void searchByKeyword() {
         // Enter "saw" into the search field
         $("#search-query").typeAndEnter("saw");
+        waitFor(250).milliseconds();
 
         // Count the number of products
         List<String> displayedProducts = getDisplayedProducts();
@@ -49,6 +50,7 @@ public class WhenSearchingForAProduct extends UIInteractions {
         var hammerCheckbox = $("#filters").findBy("//label[contains(.,'Hammer')]/input");
 
         hammerCheckbox.click();
+        waitFor(250).milliseconds();
 
         boolean isChecked = Boolean.parseBoolean(hammerCheckbox.getAttribute("checked"));
         assertThat(isChecked).isTrue();

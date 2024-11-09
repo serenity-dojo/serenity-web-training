@@ -1,4 +1,4 @@
-package serenityswag.inventory;
+package serenitydojo.serenityswag.inventory;
 
 import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.annotations.Steps;
@@ -8,8 +8,8 @@ import org.assertj.core.api.SoftAssertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
-import serenityswag.authentication.LoginActions;
-import serenityswag.authentication.User;
+import serenitydojo.serenityswag.authentication.LoginActions;
+import serenitydojo.serenityswag.authentication.User;
 
 import java.util.List;
 

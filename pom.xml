@@ -10,7 +10,7 @@
     <name>Sample Serenity BDD project using JUnit 5</name>
 
     <properties>
-        <serenity.version>4.2.7</serenity.version>
+        <serenity.version>4.2.8</serenity.version>
         <junit5.version>5.11.3</junit5.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <encoding>UTF-8</encoding>
@@ -76,12 +76,6 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>3.22.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.9.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

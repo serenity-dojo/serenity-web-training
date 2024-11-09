@@ -1,4 +1,4 @@
-package serenityswag.theinternet;
+package serenitydojo.serenityswag.theinternet;
 
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import org.junit.jupiter.api.Test;

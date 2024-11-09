@@ -1,4 +1,4 @@
-package serenityswag.authentication;
+package serenitydojo.serenityswag.authentication;
 
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.steps.UIInteractionSteps;

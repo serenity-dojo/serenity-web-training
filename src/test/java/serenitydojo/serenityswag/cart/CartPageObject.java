@@ -1,4 +1,4 @@
-package serenityswag.cart;
+package serenitydojo.serenityswag.cart;
 
 import net.serenitybdd.annotations.DefaultUrl;
 import net.serenitybdd.core.pages.PageObject;
