@@ -2,10 +2,12 @@ package serenityswag.toolshop;
 
 import net.serenitybdd.core.steps.UIInteractions;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
+import net.thucydides.core.annotations.findby.By;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
@@ -58,4 +60,46 @@ public class WhenSearchingForAProduct extends UIInteractions {
 
     }
 
+    @Test
+    void completeTheContactForm() {
+        find("[role=menubar]").findBy(By.linkText("Contact")).click();
+
+        $("#first_name").type("Sarah-Jane");
+        $("#last_name").type("Smith");
+        $("#email").type("sarah@example.com");
+        $("#subject").selectByVisibleText("Customer service");
+        $("#message").type("A very detailed message to customer service about a problem.");
+
+        WebElement attachmentField = $("#attachment");
+        upload("data/sample.txt").to(attachmentField);
+
+        $("[data-test=contact-submit]").click();
+
+        String thankYouMessage = $(".alert-success").getText();
+
+        assertThat(thankYouMessage).contains("Thanks for your message!");
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
