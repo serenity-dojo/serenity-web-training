@@ -1,5 +1,6 @@
 package serenityswag.theinternet;
 
+import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -7,11 +8,14 @@ import org.junit.jupiter.api.extension.ExtendWith;
 @ExtendWith(SerenityJUnit5Extension.class)
 public class WhenInteractingWithInputForms {
 
+    @Steps
+    NavigationActions navigate;
+
     HoverPage hoverPage;
 
     @Test
     void shouldHoverOverAnElement() {
-        hoverPage.open();
+        navigate.toTheHoverPage();
 
         hoverPage.hoverOverFigure(1);
         hoverPage.captionForFigure(1).shouldBeVisible();
