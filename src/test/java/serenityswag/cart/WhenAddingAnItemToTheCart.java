@@ -19,7 +19,7 @@ import static serenityswag.authentication.User.STANDARD_USER;
 @RunWith(SerenityRunner.class)
 public class WhenAddingAnItemToTheCart {
 
-    @Managed(driver = "chrome")
+    @Managed
     WebDriver driver;
 
     @Steps
