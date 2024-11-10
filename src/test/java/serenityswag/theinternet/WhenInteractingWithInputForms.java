@@ -38,4 +38,14 @@ public class WhenInteractingWithInputForms {
 
     }
 
+    @Test
+    void shouldWaitForAHiddenElementToAppear() {
+        navigate.toTheHiddenDynamicLoadingPage();
+
+        dynamicallyLoadedPage.start();
+
+        assertThat(dynamicallyLoadedPage.result()).isEqualTo("Hello World!");
+
+    }
+
 }
