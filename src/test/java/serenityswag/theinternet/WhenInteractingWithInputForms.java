@@ -45,7 +45,6 @@ public class WhenInteractingWithInputForms {
         dynamicallyLoadedPage.start();
 
         assertThat(dynamicallyLoadedPage.result()).isEqualTo("Hello World!");
-
     }
 
 }

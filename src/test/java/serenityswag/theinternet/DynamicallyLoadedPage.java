@@ -6,12 +6,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.time.Duration;
 
+
 public class DynamicallyLoadedPage extends PageObject {
 
     public void start() {
         $("#start button").click();
-        waitFor(ExpectedConditions.invisibilityOfElementLocated(By.id("loading")));
-//        withTimeoutOf(Duration.ofSeconds(10)).waitFor(ExpectedConditions.visibilityOfElementLocated(By.id("finish")));
+
+//        waitFor(ExpectedConditions.invisibilityOfElementLocated(By.id("loading")));
+        withTimeoutOf(Duration.ofSeconds(10))
+                .waitFor(ExpectedConditions.visibilityOfElementLocated(By.id("finish")));
 
     }
 
