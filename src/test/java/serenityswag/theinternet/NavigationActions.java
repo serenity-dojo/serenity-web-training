@@ -15,8 +15,10 @@ public class NavigationActions extends UIInteractionSteps {
         openPageNamed("dynamic_loading");
     }
 
-    public void toTheDynamicControlsPage() {
-        openPageNamed("dynamic_controls");
+
+    @Step
+    public void toTheHiddenDynamicLoadingPage() {
+        openPageNamed("dynamic_loading_hidden");
     }
 
 }

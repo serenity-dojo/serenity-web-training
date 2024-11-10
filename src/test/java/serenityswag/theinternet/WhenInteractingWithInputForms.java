@@ -5,13 +5,13 @@ import net.serenitybdd.junit5.SerenityJUnit5Extension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @ExtendWith(SerenityJUnit5Extension.class)
 public class WhenInteractingWithInputForms {
 
-    @Steps
-    NavigationActions navigate;
-
     HoverPage hoverPage;
+    NavigationActions navigate;
 
     @Test
     void shouldHoverOverAnElement() {
@@ -25,4 +25,17 @@ public class WhenInteractingWithInputForms {
         hoverPage.captionForFigure(2).shouldBeVisible();
         hoverPage.captionForFigure(2).shouldContainText("user2");
     }
+
+    DynamicallyLoadedPage dynamicallyLoadedPage;
+
+    @Test
+    void shouldWaitForAnElementToAppear() {
+        navigate.toTheDynamicLoadingPage();
+
+        dynamicallyLoadedPage.start();
+
+        assertThat(dynamicallyLoadedPage.result()).isEqualTo("Hello World!");
+
+    }
+
 }
