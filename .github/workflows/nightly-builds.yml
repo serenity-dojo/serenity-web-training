@@ -1,0 +1,127 @@
+name: Nightly Builds
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs daily at midnight UTC
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  build-main:
+    name: Main
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: main
+
+  build-todomvc:
+    name: TodoMVC Solution
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/todomvc-solution
+
+  build-lesson-1:
+    name: Lesson 1 Your First Serenity BDD Test Case
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-1-your-first-serenity-bdd-test-case
+
+  build-lesson-2:
+    name: Lesson 2 Serenity BDD Step Methods
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-2-serenity-bdd-step-methods
+
+  build-lesson-3:
+    name: Lesson 3 Steps with Parameters
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-3-steps-with-parameters
+
+  build-lesson-5:
+    name: Lesson 5 Locating Elements
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-5-locating-elements
+
+  build-lesson-6:
+    name: Lesson 6 Action Classes
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-6-action-classes
+
+  build-lesson-8:
+    name: Lesson 8 Page Objects
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-8-page-objects
+
+  build-lesson-9:
+    name: Lesson 9 FindBy Annotation
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-9-findby-annotation
+
+  build-lesson-10:
+    name: Lesson 10 Page Objects Without FindBys
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-10-page-objects-without-findbys
+
+  build-lesson-11:
+    name: Lesson 11 Working with Form Fields
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-11-working-with-form-fields
+
+  build-lesson-12:
+    name: Lesson 12 Working with Checkboxes
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-12-working-with-checkboxes
+
+  build-lesson-13:
+    name: Lesson 13 Dropdowns
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-13-dropdowns
+
+  build-lesson-14:
+    name: Lesson 14 Contact Form
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-14-contact-form
+
+  build-lesson-15:
+    name: Lesson 15 Mouse Interactions
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-15-mouse-interactions
+
+  build-lesson-16:
+    name: Lesson 16 URL Configuration
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-16-url-configuration
+
+  build-lesson-17:
+    name: Lesson 17 Implicit Waits
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-17-implicit-waits
+
+  build-lesson-18:
+    name: Lesson 18 Explicit Waits
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-18-explicit-waits
+
+  build-lesson-19:
+    name: Lesson 19 Chrome Configuration
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-19-chrome-configuration
+
+  build-lesson-20:
+    name: Lesson 20 Environments
+    uses: ./.github/workflows/setup-and-test.yml
+    with:
+      branch: sample-code/lesson-20-environments
