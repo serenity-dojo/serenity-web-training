@@ -1,44 +1,63 @@
 plugins {
-    id "net.serenity-bdd.serenity-gradle-plugin" version "2.5.10"
+    id "net.serenity-bdd.serenity-gradle-plugin" version "4.2.11"
     id 'java'
     id 'eclipse'
     id 'idea'
 }
 
-defaultTasks 'clean','test','aggregate'
+defaultTasks 'clean', 'test', 'aggregate'
 
 repositories {
     mavenLocal()
+    mavenCentral()
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
+sourceCompatibility = 17
+targetCompatibility = 17
 
 ext {
-    slf4jVersion = '1.7.7'
-    serenityCoreVersion = '2.5.8'
-    junitVersion = '4.13.1'
-    assertJVersion = '3.8.0'
-    logbackVersion = '1.2.3'
-    lombokVersion = '1.18.20'
+    serenityCoreVersion = '4.2.11'
+    junit5Version = '5.11.4'
+    assertJVersion = '3.22.0'
+    logbackVersion = '1.2.11'
 }
 
 dependencies {
-    testImplementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
-                "net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
-                "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
-                "junit:junit:${junitVersion}",
-                "org.assertj:assertj-core:${assertJVersion}",
-                "org.projectlombok:lombok:${lombokVersion}",
-                "ch.qos.logback:logback-classic:${logbackVersion}"
+    testImplementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}"
+    testImplementation "net.serenity-bdd:serenity-junit5:${serenityCoreVersion}"
+    testImplementation "net.serenity-bdd:serenity-junit:${serenityCoreVersion}"
+    testImplementation "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}"
+    testImplementation "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}"
+    testImplementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junit5Version}"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:${junit5Version}"
+
+    testImplementation "org.assertj:assertj-core:${assertJVersion}"
+    implementation "ch.qos.logback:logback-classic:${logbackVersion}"
 }
 
 test {
-    testLogging.showStandardStreams = true
+    useJUnitPlatform()
     systemProperties System.getProperties()
+    systemProperty 'junit.jupiter.extensions.autodetection.enabled', 'true'
+
+    filter {
+        includeTestsMatching "*Test"
+        includeTestsMatching "Test*"
+        includeTestsMatching "*TestSuite"
+        includeTestsMatching "When*"
+    }
 }
 
-gradle.startParameter.continueOnFailure = true
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += '-parameters'
+}
+
+serenity {
+    reports = ["single-page-html"]
+}
 
 test.finalizedBy(aggregate)
+gradle.startParameter.continueOnFailure = true
